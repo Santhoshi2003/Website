@@ -1,0 +1,152 @@
+/* components/Header.css */
+
+/* General styles for the header */
+.header {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height: 100vh;
+    text-align: left; /* Align text to the left */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Styles for the menu button */
+  .menu-button {
+    cursor: pointer;
+  }
+  
+  /* Styles for the top-right buttons */
+  .top-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .top-right button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Styles for the center content */
+  .center-content {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .center-content h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+  }
+  
+  .center-content h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 2rem; /* Larger font size for your name */
+  }
+  
+  .subtitle {
+    margin: 1rem 0;
+  }
+  
+  .subtitle p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+  }
+  
+  .center-content p {
+    margin: 1rem 0;
+    font-size: 1.1rem;
+  }
+  
+  /* Styles for the social links */
+  .social-links {
+    /* Move the social links below the header content */
+    order: 2;
+    margin-top: 20px; /* Adjust the margin-top as needed */
+    /* Add this to make the social icons visible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 576px) {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  
+  .social-links a {
+    margin: 10px; /* Add some space around the logos */
+    animation: fadein 2s ease-in-out forwards;
+    position: relative; /* Add relative positioning */
+    background-color: #333; /* Add a background color */
+    padding: 5px; /* Add padding for spacing */
+    border-radius: 50%; /* Make the background circular */
+  }
+  
+  /* Style the GitHub and email icons to appear in black color */
+  .social-links a[href^="https://github.com"] img,
+  .social-links a[href^="mailto:"] img {
+    filter: invert(100%);
+  }
+  
+  /* Increase the size of the GitHub logo */
+  .social-links a[href^="https://github.com"] img {
+    max-width: 72px; /* Adjust the logo size as needed */
+    height: auto;
+  }
+  
+  /* Decrease the size of the LinkedIn and mail icons */
+  .social-links a[href^="https://www.linkedin.com"] img,
+  .social-links a[href^="mailto:"] img {
+    max-width: 45px; /* Adjust the logo size as needed */
+    height: auto;
+  }
+  
+  /* Styles for the right content */
+  .right-content {
+    right: 0;
+    margin-right: 20px;
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+  
+  /* Animation keyframes for fade-in effect */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* 3D Effect Animation for the hexagon frame */
+  .right-content img {
+    max-width: 100%;
+    height: auto;
+    width: 200px; /* Adjust the width as needed */
+    border: 2px solid #fff; /* Add a white border */
+    clip-path: polygon(
+      50% 0%,
+      100% 25%,
+      100% 75%,
+      50% 100%,
+      0% 75%,
+      0% 25%
+    ); /* Hexagon shape */
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out; /* Add a smooth transform animation */
+  }
+  
+  /* Add a hover effect for the 3D animation */
+  .right-content img:hover {
+    transform: scale(1.05); /* Increase the size on hover */
+  }
+  
